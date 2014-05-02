@@ -51,18 +51,6 @@ NSString * const NXOAuth2AccountDidFailToGetAccessTokenNotification = @"NXOAuth2
     return self;
 }
 
-- (id)initAccountWithAccessToken:(NXOAuth2AccessToken *)anAccessToken accountType:(NSString *)anAccountType;
-{
-    self = [super init];
-    if (self) {
-        accountType = anAccountType;
-        accessToken = anAccessToken;
-        oauthClient.delegate = self;
-        identifier = [NSString nxoauth2_stringWithUUID];
-    }
-    return self;
-}
-
 @end
 
 
@@ -78,6 +66,18 @@ NSString * const NXOAuth2AccountDidFailToGetAccessTokenNotification = @"NXOAuth2
 
 
 #pragma mark Accessors
+
+- (id)initAccountWithAccessToken:(NXOAuth2AccessToken *)anAccessToken accountType:(NSString *)anAccountType;
+{
+    self = [super init];
+    if (self) {
+        accountType = anAccountType;
+        accessToken = anAccessToken;
+        oauthClient.delegate = self;
+        identifier = [NSString nxoauth2_stringWithUUID];
+    }
+    return self;
+}
 
 - (NXOAuth2Client *)oauthClient;
 {

@@ -43,4 +43,6 @@ extern NSString * const NXOAuth2AccountDidFailToGetAccessTokenNotification;
 @property (nonatomic, strong, readonly) NXOAuth2Client *oauthClient;
 @property (nonatomic, strong, readonly) NXOAuth2AccessToken *accessToken;
 
+- (id)initAccountWithAccessToken:(NXOAuth2AccessToken *)anAccessToken accountType:(NSString *)anAccountType;
+
 @end
